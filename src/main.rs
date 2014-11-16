@@ -1,9 +1,6 @@
-fn main() {
-    hello::hey_there();
-}
+extern crate snippets;
 
-mod hello {
-    pub fn hey_there(){
-        println!("yolo")
-    }
+#[cfg(not(test))]
+fn main() {
+    println!("Hello, world!")
 }
