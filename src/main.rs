@@ -2,12 +2,15 @@ extern crate redis;
 use redis::Commands;
 
 fn main() {
-  let x = match fetch_an_integer() {
-    Ok(v) => { println!("The number is {}", v) },
-    Err(v) => { println!("The number is {}", v) }
+  let x = fetch_an_integer();
+  match x {
+      Ok(v) => {
+          println!("working with version: {}", v);
+      }
+      Err(e) => {
+          println!("error parsing header: {}", e);
+      }
   };
-
-  println!("I am x: {}", x);
 }
 
 fn fetch_an_integer() -> redis::RedisResult<int> {
