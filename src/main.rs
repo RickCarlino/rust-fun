@@ -24,3 +24,10 @@ fn fetch_an_integer() -> redis::RedisResult<int> {
     // convert into one.
     con.get("my_key")
 }
+
+
+
+
+//objects in rust 
+
+
