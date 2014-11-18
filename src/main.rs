@@ -19,12 +19,19 @@ fn main() {
     println!("I am some_position's y: {}", some_position.y)
 
     agent::change_position(&mut some_position, -5i, -4i);
-    //agent::change_position()
 
     println!("and after change_position");
-
     println!("I am some_position's x: {}", some_position.x);
     println!("I am some_position's y: {}", some_position.y);
+
+
+    let mut agent_smith = agent::Agent::new( agent::Position {x: 1i, y:2i});
+    println!("agent_smith's x: {}", agent_smith.position.x);
+    println!("agent_smith's y: {}", agent_smith.position.y);
+
+    agent_smith.change_position(5i,5i);
+
+
 
 }
 

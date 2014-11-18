@@ -14,15 +14,22 @@ pub fn change_position(pos: &mut Position, delta_x:int, delta_y: int) {
 
 pub struct Agent {
     /// An entity that is capable of action
-    position: Position
+    pub position: Position
 }
 
 impl Agent {
-    fn change_position(&self) {
+    pub fn change_position(&mut self, delta_x: int, delta_y: int) {
         println!("Moving, sir!");
+        println!("&self.position.x  {}", &self.position.x);
+        println!("&self.position.y  {}", &self.position.y);
+        self.position.y = *&self.position.y + delta_y;
+        self.position.x = *&self.position.x + delta_x;
+        println!("I moved");
+        println!("&self.position.x  {}", &self.position.x);
+        println!("&self.position.y  {}", &self.position.y);
     }
 
-    fn new(position: Position) -> Agent {
+    pub fn new(position: Position) -> Agent {
         Agent { position: position }
     }
 }
