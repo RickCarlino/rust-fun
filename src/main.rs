@@ -14,6 +14,17 @@ fn main() {
             println!("error parsing header: {}", e);
         }
     };
+    let mut some_position = agent::Position{x:5i, y:4i};
+    println!("I am some_position's x: {}", some_position.x)
+    println!("I am some_position's y: {}", some_position.y)
+
+    agent::change_position(&mut some_position, -5i, -4i);
+    //agent::change_position()
+
+    println!("and after change_position");
+
+    println!("I am some_position's x: {}", some_position.x);
+    println!("I am some_position's y: {}", some_position.y);
 
 }
 

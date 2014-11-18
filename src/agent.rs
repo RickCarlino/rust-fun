@@ -3,14 +3,13 @@
 // here we go
 
 pub struct Position {
-  x: int,
-  y: int,
+  pub x: int,
+  pub y: int,
 }
 
-pub fn change_position(pos: &mut Position, delta_x:int, delta_y: int)-> &Position {
+pub fn change_position(pos: &mut Position, delta_x:int, delta_y: int) {
   pos.x = pos.x + delta_x;
   pos.y = pos.y + delta_y;
-  return pos
 }
 
 pub struct Agent {
