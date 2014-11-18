@@ -1,16 +1,20 @@
 extern crate redis;
+
 use redis::Commands;
 
+mod agent;
+
 fn main() {
-  let x = fetch_an_integer();
-  match x {
-      Ok(v) => {
-          println!("working with version: {}", v);
-      }
-      Err(e) => {
-          println!("error parsing header: {}", e);
-      }
-  };
+    let x = fetch_an_integer();
+    match x {
+        Ok(v) => {
+            println!("working with version: {}", v);
+        }
+        Err(e) => {
+            println!("error parsing header: {}", e);
+        }
+    };
+
 }
 
 fn fetch_an_integer() -> redis::RedisResult<int> {
@@ -28,6 +32,6 @@ fn fetch_an_integer() -> redis::RedisResult<int> {
 
 
 
-//objects in rust 
+//objects in rust
 
 
