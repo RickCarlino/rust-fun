@@ -2,12 +2,6 @@
 // Ex: Item, Player, NPC
 // here we go
 
-
-struct Position {
-    x: uint,
-    y: uint,
-}
-
 struct Agent {
     /// An entity that is capable of action
     position: Position
