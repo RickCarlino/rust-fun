@@ -1,4 +1,4 @@
-struct Position {
-    x: uint,
-    y: uint,
+pub struct Position {
+    pub x: int,
+    pub y: int,
 }

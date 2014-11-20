@@ -2,19 +2,16 @@
 // Ex: Item, Player, NPC
 // here we go
 
-pub struct Position {
-  pub x: int,
-  pub y: int,
-}
-
-pub fn change_position(pos: &mut Position, delta_x:int, delta_y: int) {
+pub fn change_position(pos: &mut super::position::Position,
+                       delta_x:int,
+                       delta_y: int) {
   pos.x = pos.x + delta_x;
   pos.y = pos.y + delta_y;
 }
 
 pub struct Agent {
     /// An entity that is capable of action
-    pub position: Position
+    pub position: super::position::Position
 }
 
 impl Agent {
@@ -29,7 +26,7 @@ impl Agent {
         println!("&self.position.y  {}", &self.position.y);
     }
 
-    pub fn new(position: Position) -> Agent {
+    pub fn new(position: super::position::Position) -> Agent {
         Agent { position: position }
     }
 }
