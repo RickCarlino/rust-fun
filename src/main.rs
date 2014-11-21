@@ -1,5 +1,9 @@
+
+
 mod position;
 mod agent;
+mod board;
+
 
 #[cfg(not(test))]
 fn main() {
@@ -43,7 +47,25 @@ pub mod tests {
       some_agent.change_position(5i,5i);
       assert!(some_agent.position.x == 6);
       assert!(some_agent.position.y == 7);
+    }
 
+    #[test]
+    fn test_map_new_method() {
+      let new_map = ::board::Map::new(4,4); //initialize(5i,4i);
+      assert_eq!(new_map.width, 4);
+      assert_eq!(new_map.height, 4);
+    }
+
+    #[test]
+    #[should_fail]
+    fn test_map_initialize_not_wide_enough() {
+      let new_map = ::board::Map::new(0,4);
+    }
+
+    #[test]
+    #[should_fail]
+    fn test_map_initialize_not_high_enough() {
+      let new_map = ::board::Map::new(4,0);
     }
 }
 

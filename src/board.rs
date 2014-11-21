@@ -1,8 +1,9 @@
 
+use agent;
 
 struct Tile {
-  pub position: super::position::Position
-  pub contains: Vec<Agents>
+  pub position: super::position::Position,
+  pub contains: Vec<agent::Agent>,
 }
 
 
@@ -11,18 +12,21 @@ struct Tile {
 pub struct Map {
   pub height: int,
   pub width: int,
-  pub tiles: Vec<Tile>
+  //pub tiles: Vec<Tile>,
 }
 
 impl Map {
-  pub fn initialize(&self, height: int, width: int) {
-    if height < 1 {
+  pub fn new(height: int, width: int )-> Map {
+    if height <= 1 {
       panic!("Height cannot be less than 1");
     }
-    if width < 1 {
+    if width <= 1 {
       panic!("Width cannot be less than 1");
     }
-    self.height = height;
-    self.width  = width;
+    return Map {height: height, width: width}
+  }
+
+  pub fn within(&self, height: int, width: int) -> bool {
+    return height <= self.height && width <= self.width
   }
 }

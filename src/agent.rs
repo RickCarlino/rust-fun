@@ -2,6 +2,7 @@
 // Ex: Item, Player, NPC
 // here we go
 
+
 pub fn change_position(pos: &mut super::position::Position,
                        delta_x:int,
                        delta_y: int) {
