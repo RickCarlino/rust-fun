@@ -1,10 +1,4 @@
-
 use agent;
-
-struct Tile {
-  pub position: super::position::Position,
-  pub contains: Vec<agent::Agent>,
-}
 
 
 /// board attrs are not mutable.

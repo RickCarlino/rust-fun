@@ -1,5 +1,3 @@
-
-
 mod position;
 mod agent;
 mod board;

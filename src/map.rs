@@ -1,9 +1,3 @@
-struct Tile {
-  pub position: super::position::Position
-  pub contains: Vec<Agents>
-}
-
-
 /// board attrs are not mutable.
 
 pub struct Map {
