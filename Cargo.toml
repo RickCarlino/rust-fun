@@ -4,5 +4,7 @@ name = "rust-chat"
 version = "0.0.1"
 authors = ["Rick Carlino <rick.carlino@gmail.com>"]
 
-[dependencies.redis-rs]
+[dependencies.redis]
 git = "https://github.com/mitsuhiko/redis-rs.git"
+
+
